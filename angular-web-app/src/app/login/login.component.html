@@ -1,0 +1,39 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-content>
+      <form class="login-form">
+        <table class="login-table">
+          <tr>
+            <td>
+              <mat-form-field appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <label>
+                  <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                </label>
+                <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <label>
+                  <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required>
+                </label>
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+        <mat-card-actions>
+          <button mat-raised-button (click)="onLogin()" color="primary">Login</button>
+        </mat-card-actions>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

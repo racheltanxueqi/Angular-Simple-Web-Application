@@ -1,0 +1,27 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: aliceblue;
+}
+
+mat-card-title, mat-card-content{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.mat-form-field  {
+  width: 100%;
+  min-width: 20vw;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  width: 10vw;
+}
